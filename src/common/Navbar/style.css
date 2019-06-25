@@ -1,0 +1,39 @@
+.app-navbar {
+    background-color: #61b8ed;
+    color: #ffffff;
+}
+
+.app-navbar__collection {
+    margin: 0;
+    padding: 0;
+}
+
+.app-navbar__collection * {
+    list-style: none;    
+}
+
+.app-navbar__collection__item {
+    cursor: pointer;
+    position: relative;
+    background: #9ccdeb;
+    display: inline-block;
+    padding: 1rem;
+}
+
+.app-navbar__collection__item.--open .app-navbar__collection__notification {
+    display: block;
+}
+
+.app-navbar__collection__notification {
+    background: #fff;
+    color: #000;
+    display: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    border: 1px solid tomato;
+}
+
+.app-navbar__collection__notification li {
+    display: block;
+}
