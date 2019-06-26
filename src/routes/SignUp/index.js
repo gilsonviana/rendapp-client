@@ -34,10 +34,8 @@ class SignUp extends Component {
     handleSubmit(e) {
         e.preventDefault()
         
-        this.setState({ submitted: true })
-        const { username, password } = this.state        
-        // call redux action creator
-        this.props.login(username, password)
+        this.setState({ submitted: true })        
+        // call redux action creator        
     }
 
     render() {
@@ -72,7 +70,7 @@ class SignUp extends Component {
                                             name="cpf_cnpj"
                                             onChange={(e) => this.handleChange(e)} /> <FontAwesomeIcon icon={faIdBadge} />
                                     </div>                                    
-                                    <button className="form-button" type="submit">Cadastrar</button>
+                                    <Link to="/" className="form-button" type="submit">Cadastrar</Link>
                                     <Link to="/" className="form-button">Cancelar</Link>
                                 </form>                                
                             </div>

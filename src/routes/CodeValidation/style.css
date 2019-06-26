@@ -1,32 +1,32 @@
-.forgot-password {
+.code-validation {
     background-color: #fff; 
 }
 
-.forgot-password__header img {
+.code-validation__header img {
     width: 150px;
     margin: 0 auto;
 }
 
-.forgot-password__header__text {
+.code-validation__header__text {
     font-style: italic;
     margin: 2rem auto 0;    
     max-width: 280px;
 }
 
-.forgot-password__container {
+.code-validation__container {
     background-color: #fff;
     padding: 8rem 4rem;
 }
 
-.forgot-password__header {
+.code-validation__header {
     margin-bottom: 4rem;
 }
 
-.forgot-password__form .form-group {
+.code-validation__form .form-group {
     position: relative;
 }
 
-.forgot-password__form input {
+.code-validation__form input {
     border: none;
     border-bottom: 2px solid #7a7a7a;
     outline: none;
@@ -35,13 +35,13 @@
     width: 100%;
 }
 
-.forgot-password__form input + svg {
+.code-validation__form input + svg {
     position: absolute;
     left: 1rem;
     bottom: .8rem;
 }
 
-.forgot-password__form .form-button {
+.code-validation__form .form-button {
     width: 100%;
     display: block;
     text-align: center;
@@ -55,19 +55,19 @@
     font-weight: bold;
 }
 
-.forgot-password__form .form-button[type=submit] {
+.code-validation__form .form-button[type=submit] {
     background: var(--color-primary);
     color: #fff;
 }
 
 @media (min-width: 768px) {
-    .forgot-password {
+    .code-validation {
         padding-top: 10rem;
         height: 100vh;  
         background-color: var(--color-primary);      
     }
 
-    .forgot-password__container {
+    .code-validation__container {
         border-radius: 16px;
         box-shadow: 0 3px 1rem rgba(60, 60, 120, .9);
     }

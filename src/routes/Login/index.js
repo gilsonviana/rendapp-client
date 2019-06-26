@@ -48,7 +48,7 @@ class Login extends Component {
                         <div className="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4">
                             <div className="login__container">
                                 <header className="login__header text-center">
-                                    <img src={require('../../assets/images/logo.png')} className="img-responsive"/>
+                                    <img src={require('../../assets/images/logo.png')} className="img-responsive"/>                                    
                                 </header>
                                 <form className="login__form" onSubmit={this.handleSubmit}>
                                     <div className="form-group">                            
@@ -66,7 +66,7 @@ class Login extends Component {
                                             onChange={(e) => this.handleChange(e)}/> <FontAwesomeIcon icon={faLock}/>
                                     </div>
                                     <div className="form-group text-right">
-                                        <a>Recuperar senha</a>
+                                        <Link to="/recuperar-senha">Recuperar senha</Link>
                                     </div>
                                     <Link to="/painel" className="form-button" type="submit">Entrar</Link>
                                     <Link to="/cadastrar" className="form-button">Quero me cadastrar</Link>
