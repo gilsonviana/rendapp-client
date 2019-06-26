@@ -1146,7 +1146,7 @@ pre.prettyprint {
     -webkit-box-shadow: none;
     box-shadow: none;
     min-height: 45px;
-    background: #438EB9
+    background: var(--color-primary)
 }
 
 .navbar .navbar-link,.navbar .navbar-text {
@@ -1159,7 +1159,9 @@ pre.prettyprint {
     text-shadow: none;
     padding-top: 10px;
     padding-bottom: 10px;
-    height: auto
+    height: auto;
+    display: flex;
+    align-items: center;
 }
 
 .navbar .navbar-brand:focus,.navbar .navbar-brand:hover {

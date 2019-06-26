@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown, faCog, faUser, faPowerOff, faLeaf, faTasks, faCheck, faArrowRight, faBell, faExclamationTriangle, faComment, faShoppingCart, faEnvelope, faClock } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown, faCog, faUser, faPowerOff, faBell, faExclamationTriangle, } from '@fortawesome/free-solid-svg-icons'
 
 export default class Navbar extends Component {
 	constructor(props) {
@@ -12,14 +12,25 @@ export default class Navbar extends Component {
 				user: false
 			},
 
-			notifications: {
-				number: 0
+			// TODO information comming from the redux store
+			notification: {
+				number: 0,
+				notifications: []
+			},
+
+			user: {
+				name: 'Jonas'
 			}
 		}
 
 		this.handleNavButtonClick = this.handleNavButtonClick.bind(this)
 	}
 
+	/**
+	 * Toggle display/hide of a particular element
+	 * 
+	 * @param {String} buttonName name given to the component on the state object
+	 */
 	handleNavButtonClick(buttonName) {
 		this.setState(state => ({
 			navButtons: {
@@ -43,23 +54,21 @@ export default class Navbar extends Component {
 					</button>
 
 					<div className="navbar-header pull-left">
-						<a href="index.html" className="navbar-brand">
-							<small>
-								<FontAwesomeIcon icon={faLeaf} />
-								Ace Admin
-						</small>
+						<a href="index.html" className="navbar-brand">							
+							<img src={require('../../../assets/images/logo.png')} style={{width: 'auto', height: '30px'}}/>
+							Ace Admin							
 						</a>
 					</div>
 
 					<div className="navbar-buttons navbar-header pull-right" role="navigation">
 						<ul className="nav ace-nav">
 
-							<li className={(this.state.navButtons.notifications) ? 'purple dropdown-modal open' : 'purple dropdown-modal'} onClick={() => this.handleNavButtonClick('notifications')}>
+							<li className={(this.state.navButtons.notification) ? 'purple dropdown-modal open' : 'purple dropdown-modal'} onClick={() => this.handleNavButtonClick('notification')}>
 								<a data-toggle="dropdown" className="dropdown-toggle" href="#" aria-expanded="false">
 									<FontAwesomeIcon icon={faBell} />
 									{
-										(this.state.notifications.number > 0) &&
-										<span className="badge badge-important">{this.state.navButtons.notifications.number}</span>
+										(this.state.notification.number > 0) &&
+										<span className="badge badge-important">{this.state.navButtons.notification.number}</span>
 									}
 								</a>
 
@@ -111,8 +120,8 @@ export default class Navbar extends Component {
 								<a data-toggle="dropdown" href="#" className="dropdown-toggle" aria-expanded="false">
 									<img className="nav-user-photo" src={require('./user.jpg')} alt="Jason's Photo" />
 									<span className="user-info">
-										<small>Welcome,</small>
-										Jason
+										<small>Bem vindo,</small>
+										{this.state.user.name}
 								</span>
 
 									<FontAwesomeIcon icon={faCaretDown} />
