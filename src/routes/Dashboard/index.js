@@ -1,14 +1,20 @@
+import '../../assets/css/ace.min.css'
+import '../../assets/css/ace-skins.min.css'
+import '../../assets/css/ace-rtl.min.css'
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
-import Sidebar from './Sidebar';
+import Navbar from './Navbar'
+import Sidebar from './Sidebar'
+import Default from './Default'
 
 export default class Dashboard extends Component {        
     render() {
         return(
             <div className="main-container ace-save-state" id="main-container">
+                <Navbar />
                 <Sidebar />            
-                {/** MAIN CONTENT */}    
+                <Route exact path={`${this.props.location.pathname}/`} component={Default} />
             </div>
         )
     }

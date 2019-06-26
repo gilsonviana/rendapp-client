@@ -21,11 +21,11 @@
 }
 
 .signup__form input {
-    border: none;
-    border-bottom: 1px solid #707070;
-    outline: none;
-    padding-left: 3.5rem;
-    padding-bottom: .5rem;
+    border: none !important;
+    border-bottom: 1px solid #707070 !important;
+    outline: none !important;
+    padding-left: 3.5rem !important;
+    padding-bottom: .2rem !important;
     width: 100%;
 }
 

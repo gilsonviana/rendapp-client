@@ -1,9 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/css/variables.css'
 import './assets/css/reset.css'
-// import './vendors/ace.min.css'
-// import './vendors/ace-skins.min.css'
-// import './vendors/ace-rtl.min.css'
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';

@@ -21,11 +21,11 @@
 }
 
 .login__form input {
-    border: none;
-    border-bottom: 2px solid #7a7a7a;
-    outline: none;
-    padding-left: 3.5rem;
-    padding-bottom: .5rem;
+    border: none !important;
+    border-bottom: 2px solid #7a7a7a !important;
+    outline: none !important;
+    padding-left: 3.5rem !important;
+    padding-bottom: .2rem !important;
     width: 100%;
 }
 

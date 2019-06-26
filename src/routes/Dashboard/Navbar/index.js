@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { withRouter, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faCog, faUser, faPowerOff, faBell, faExclamationTriangle, } from '@fortawesome/free-solid-svg-icons'
 
-export default class Navbar extends Component {
+class Navbar extends Component {
 	constructor(props) {
 		super(props)
 
@@ -54,10 +55,10 @@ export default class Navbar extends Component {
 					</button>
 
 					<div className="navbar-header pull-left">
-						<a href="index.html" className="navbar-brand">							
+						<Link to={`${this.props.location.pathname}`} className="navbar-brand">							
 							<img src={require('../../../assets/images/logo.png')} style={{width: 'auto', height: '30px'}}/>
 							Ace Admin							
-						</a>
+						</Link>
 					</div>
 
 					<div className="navbar-buttons navbar-header pull-right" role="navigation">
@@ -143,9 +144,9 @@ export default class Navbar extends Component {
 									<li className="divider"></li>
 
 									<li>
-										<a href="#">
+										<Link to="/">
 											<FontAwesomeIcon icon={faPowerOff} /> Logout
-										</a>
+										</Link>
 									</li>
 								</ul>
 							</li>
@@ -156,3 +157,5 @@ export default class Navbar extends Component {
 		)
 	}
 }
+
+export default withRouter(Navbar)
