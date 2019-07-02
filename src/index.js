@@ -3,14 +3,20 @@ import './assets/css/variables.css'
 import './assets/css/reset.css'
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import { store } from './redux/store/index'
+
+import { history } from './common/helper/history'
 import App from './App';
+
 import * as serviceWorker from './serviceWorker';
 
 render(
     <Provider store={store}>
-        <App />
+        <Router history={history}>
+            <App />
+        </Router>
     </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

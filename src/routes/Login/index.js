@@ -37,7 +37,12 @@ class Login extends Component {
         this.setState({ submitted: true })
         const { username, password } = this.state        
         // call redux action creator
-        this.props.login(username, password)
+        this.props.history.push('/painel')
+    }
+
+    _submitOnSuccess() {
+        console.log('+ Called submitOnSuccess')
+        this.props.location.push('/painel')
     }
 
     render() {
@@ -68,7 +73,7 @@ class Login extends Component {
                                     <div className="form-group text-right">
                                         <Link to="/recuperar-senha">Recuperar senha</Link>
                                     </div>
-                                    <Link to="/painel" className="form-button" type="submit">Entrar</Link>
+                                    <button className="form-button" type="submit">Entrar</button>
                                     <Link to="/cadastrar" className="form-button">Quero me cadastrar</Link>
                                 </form>
                                 <footer className="login__footer">
@@ -91,10 +96,10 @@ class Login extends Component {
     }
 }
 
-const mapStateToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
     return {
         login
     }
 }
 
-export default connect(null, mapStateToProps)(Login)
+export default connect(null, mapDispatchToProps)(Login)

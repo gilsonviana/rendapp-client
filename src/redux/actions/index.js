@@ -1,10 +1,7 @@
 import * as types from './types'
+import { user } from '../../services'
 
-export const login = (username, password) => {    
-    return {
-        type: types.USER_AUTH,
-        payload: {
-            isUserAuthenticated: true
-        }
-    }
+export const login = (username, password, onSuccess) => {           
+    let errorMessage = ''
+    onSuccess()
 }
